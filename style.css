@@ -1,0 +1,670 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --theme-text:rgb(255, 235, 255);
+    --bgdiv:rgb(22, 0, 49);
+    --theme-color:rgb(19 133 218);
+}
+body{
+    background-color: black;
+    color: var(--theme-text);
+    font-family:sans-serif;
+}
+main{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* left part yahaan se shuru hai */
+.left{    
+    width: 24%;
+    height: 100%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -25%;
+    transition: all 1s ease-in-out;
+    gap: 5px;
+}
+/* home part yahaan se shuru hai */
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 26px;
+}
+.home .logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    transition: all 1s ease-in-out;
+    bottom: -200%;
+    left: 350%;
+}
+.home .logo img{
+    width: 200px;
+}
+.home .logo .close{
+    display: none;
+}
+/* library yahaan se shuru hai  */
+.library{
+    display: flex;
+    flex-direction: column;
+    height: 74vh;
+    position: relative;
+}
+.your-lib{
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--bgdiv);
+    height: 5%;
+    padding: 22px;
+}
+.library .lib-logo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: var(--theme-text);
+    font-size: 15px;
+    gap: 15px;
+}
+.library .lib-logo img{
+    width: 23px;
+}
+.library .plus img{
+    width: 18px;
+}
+/* playlist aur podcast waala area yahaan se start ho raha */
+.play-pod{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    gap: 3px;
+    margin: 2px;
+    overflow: scroll;
+}
+/* song card yahaan se shuru hai */
+.song-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+    /* background-color:rgb(4, 9, 20); */
+    box-shadow: -130px 5px 5px var(--bgdiv);
+}
+.song-card .playing{
+    display: none;
+}
+.song-card img{
+    /* width: 50px; */
+    height: 15px;
+    border-radius: 5px;
+}
+.song-card .simgname{
+    display: flex;
+    gap: 10px;
+}
+.song-card .simgname img{
+    width: 45px;
+    height: 45px;
+}
+.songname{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.songname img{
+    width: 25px;
+}
+                                                                /* right
+                                                                part
+                                                                start hogaya  */
+.right{
+    width: 78%;
+    height: 100%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    top:-100%;
+    transition: all 1s ease-in-out;
+}
+/* header yahaan se shuru hai */
+.right header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px;
+    position: relative;
+}
+.right header .logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .arrow{
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+}
+header .arrow .logo img{
+    display: none;
+    align-items: center;
+    width: 115px;
+}
+header .arrow .hamburger{
+    display: none;
+}
+header .arrow .hamburger img{
+    width: 12px;
+}
+header .arrow button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    border-radius: 20px;
+    background-color: var(--bgdiv);
+    border: 0px;
+    margin: 4px;
+    cursor: pointer;
+}
+header .arrow img{
+    width: 14px;
+}
+header .arrow .aright img{
+    transform: rotate(180deg);
+}
+header .themechanger{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 10px;
+    width: 20%;
+    cursor:pointer;
+}
+header .themechanger img{
+    height: 25px;
+}
+/* right ka screen part yahaan se start haii */
+.screen{
+    width: 100%;
+    height: 87vh;
+    position: relative;
+}
+/* playlist waala area yahaan se start hai */
+.screen .playlists{
+    display: flex;
+    flex-direction: column;
+}
+.screen .playlists .heading{
+    font-size: 26px;
+    padding: 18px;
+    font-weight: bold;
+    background-color: var(--bgdiv);
+}
+.screen .playlist-card{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 95%;
+    height: 45vh;
+    padding: 15px;
+}
+.playlist-card .list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.screen .playlist-card .listimage{
+    position: relative;
+    width: 130px;
+    height: 140px;
+}
+.screen .playlist-card .listimage img{
+    width: 130px;
+    height: 140px;
+    border-radius: 8px;
+}
+.screen .playlist-card .listimage .buttonlayout{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+.screen .playlist-card .playpause{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 85px;
+}
+.screen .playlist-card .listimage .buttonlayout:hover{
+    opacity: 1;
+}
+
+.screen .playlist-card .playpause img{
+    width: 40px;
+    height: 40px;
+}
+.screen .playlist-card .listname{
+    font-size: 20px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+/* playbar waala yahaan se shuru hai */
+.playbar{
+    height: 8vh;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    background-color: var(--bgdiv);
+    position: absolute;
+    transition: all 700ms;
+    bottom: 0;
+    width: 100%;    
+    box-sizing: border-box;
+    padding: 2px 30px;
+}
+.pbleft{
+    width: 13vw;
+}
+.pbleft .song-card{
+    height: 4vh;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0px 0px 0px var(--bgdiv);
+}
+.pbleft .song-card img{
+    height: 12px;
+}
+.pbleft .song-card .simgname img{
+    width: 35px;
+    height: 35px;
+}
+.pbcenter{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    position: sticky;
+}
+.pbright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100%;
+    width: 13vw;
+}
+.pbright img{
+    width: 20px;
+}
+.volume{
+    height: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.volume-slider{
+    height: 100%;
+    font-size: 1px;
+}
+.time-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:100%;
+}
+.current{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 100%;
+    font-size: 14px;
+    width: 37px;
+}
+.songlength{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 100%;
+    font-size: 14px;
+    width: 37px;
+}
+.prevplaynext{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.prevplaynext img{
+    width: 30px;
+    cursor: pointer;
+    /* display: flex; */
+}
+.play img{
+    width: 35px;
+}
+.seekbar{
+    height: 5px;
+    width: 30vw;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.seekbar .played{
+    height: 100%;
+    border-radius: 100px;
+    background-color: var(--theme-color);
+}
+.copyright{
+    font-size: 10px;
+}
+@media (max-width:800px) {
+    main .left{
+        position: absolute;
+        left: -100%;
+        transition: all 1s;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        gap: 0px;
+    }
+    .home{
+        gap: 7px;
+        padding: 10px;
+    }
+    .home .logo{
+        display: flex;
+        bottom: -600%;
+        left: 150%;
+    }
+    .home .logo .close{
+        display: flex;
+        justify-content: end;
+        padding-left: 15px;
+        width: 50%;
+    }
+    .home .logo .close img{
+        width: 12px;
+    }
+    .home .home-logo,.home .search-logo{
+        gap: 6px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .home .home-logo{
+        padding-top: 25px;
+    }
+    .home .search-logo{
+        color: var(--theme-text);
+    }
+    .home .logo img{
+        width: 115px;
+    }
+    .home img{
+        width: 10px;
+    }
+    /* library yahaan se shuru hai  */
+    .library{
+        height: 88%;
+        position: relative;
+    }
+    .your-lib{
+        align-items: center;
+        height: 5%;
+        padding: 6px 0px;
+    }
+    .library .lib-logo{
+        font-size: 12px;
+        gap: 5px;
+        padding-left: 10px;
+    }
+    .library .lib-logo img{
+        width: 11px;
+    }
+    .library .plus{
+        padding-right: 10px;
+    }
+    .library .plus img{
+        width: 11px;
+    }
+    /* playlist aur podcast waala area yahaan se start ho raha */
+    .play-pod{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        margin: 2px;
+        overflow: scroll;
+        gap: 5px;
+    }
+    /* playist me jo song cards hai */
+    .song-card{
+        padding: 8px;
+        gap: 2px;
+    }
+    .song-card img{
+        /* width: 50px; */
+        height: 12px;
+        border-radius: 5px;
+    }
+    .song-card .simgname{
+        display: flex;
+        gap: 10px;
+    }
+    .song-card .simgname img{
+        width: 35px;
+        height: 35px;
+    }
+    .songname{
+        font-size: 12px;
+    }
+    /* right
+    part
+    start hogaya  */
+    .right{
+        width: 100%;
+        height: 100%;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    /* header yahaan se shuru hai */
+    .right header{
+        padding: 8px 3px;
+    }
+    header .arrow{
+        display: flex;
+        padding: 0px 5px;
+        gap: 10px;
+        width: 100%;
+    }
+    header .logo{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    header .arrow .logo img{
+        display: flex;
+    }
+    header .arrow .hamburger{
+        display: block;
+    }
+    header .arrow .aright,header .arrow .aleft{
+        display: none;
+    }
+    header .themechanger{
+        position: absolute;
+        bottom: -50%;
+        right: 0;
+        z-index: 8;
+    }
+    header .themechanger img{
+        width: 10px;
+    }
+    /* right ka screen part yahaan se start haii */
+    .screen{
+        width: 100%;
+        height: 87vh;
+        position: relative;
+    }
+    /* playlist waala area yahaan se start hai */
+    .screen .playlists{
+        display: flex;
+        flex-direction: column;
+    }
+    .screen .playlists .heading{
+        font-size: 18px;
+        padding: 10px;
+    }
+    .screen .playlist-card{
+        gap: 15px;
+        width: 95%;
+        height: 55vh;
+        padding: 15px;
+    }
+    .playlist-card .list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .screen .playlist-card .listimage{
+        position: relative;
+        width: 130px;
+        height: 140px;
+    }
+    .screen .playlist-card .listimage img{
+        width: 130px;
+        height: 140px;
+    }
+    .screen .playlist-card .listimage .buttonlayout{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transition: all 0.5s ease-out;
+    }
+    .screen .playlist-card .playpause{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        height: 30px;
+        width: 30px;
+        border-radius: 30px;
+        position: absolute;
+        bottom: 10px;
+        left: 85px;
+    }
+    .screen .playlist-card .listimage .buttonlayout:hover{
+        opacity: 1;
+    }
+
+    .screen .playlist-card .playpause img{
+        width: 40px;
+        height: 40px;
+    }
+    .screen .playlist-card .listname{
+        font-size: 20px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+    }
+    /* playbar waala yahaan se shuru hai */
+    .playbar{
+        height: 6vh;
+        gap: 0px;    
+        box-sizing: border-box;
+        padding: 2px 10px;
+    }
+    .pbleft{
+        width: 20%;
+    }
+    .pbleft .song-card{
+        height: 4vh;
+        font-size: 10px;
+    }
+    .pbleft .song-card .simgname img{
+        width: 25px;
+        height: 25px;
+    }
+    .pbcenter{
+        width: 40%;
+    }
+    .pbcenter .seekbar{
+        width: 100%;
+    }
+    .pbright{
+        gap: 5px;
+        height: 100%;
+        width: 20%;
+    }
+    .pbright img{
+        width: 15px;
+    }
+    .volume{
+        height: 2.5px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .volume-slider{
+        height: 100%;
+        width: 100%;
+        font-size: 1px;
+    }
+    .current{
+        font-size: 10px;
+        width: 25px;
+    }
+    .songlength{
+        font-size: 10px;
+        width: 25px;
+    }
+    .prevplaynext{
+        gap: 5px;
+    }
+    .prevplaynext img{
+        width: 20px;
+        /* display: flex; */
+    }
+    .play img{
+        width: 20px;
+    }
+    .copyright{
+        font-size: 6px;
+    }
+}

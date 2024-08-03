@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rythmm</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body>
+    <main>
+      <div class="left">
+        <div class="home bg-theme border">
+          <div class="logo">
+            <img src="assets/rythmm.png" alt="" srcset="" />
+            <div class="close" onclick="closeWin();">
+              <img class="invert" src="assets/svgs/close.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="library bg-theme border">
+          <div class="your-lib borderTop">
+            <div class="lib-logo">
+              <img class="invert" src="assets/svgs/lib.svg" alt="Lib" />Your
+              Library
+            </div>
+          </div>
+          <div class="play-pod"></div>
+        </div>
+        <div class="copyright">©Abdullah Sajid</div>
+      </div>
+      <div class="right border">
+        <header class="border bg-theme">
+          <div class="arrow">
+            <div class="logo">
+              <img src="assets/rythmm.png" alt="" srcset="" />
+              <div class="hamburger" onclick="slideout();">
+                <img class="invert" src="assets/svgs/hamburger.svg" alt="" />
+              </div>
+            </div>
+            <button class="aleft" onclick="back();">
+              <img class="invert" src="assets/svgs/leftarrow.svg" alt="" />
+            </button>
+            <button class="aright" onclick="forward();">
+              <img class="invert" src="assets/svgs/leftarrow.svg" alt="" />
+            </button>
+          </div>
+          <div class="themechanger" onclick="change();">
+            <img class="invert" src="assets/svgs/dark.svg" alt="">
+          </div>
+        </header>
+        <div class="screen bg-theme border">
+          <div class="playlists">
+            <div class="heading borderTop">Playlists</div>
+            <div class="playlist-card">
+              <div class="list1" onclick="getBollySongs();">
+                <div class="listimage">
+                  <img src="assets/list img/bollyplaylist.jfif" alt="" />
+                  <div class="buttonlayout bollybutton border">
+                    <div class="playpause">
+                      <img src="assets/svgs/play.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="listname">Bollywood</div>
+              </div>
+              <div class="list1" onclick="getRapSongs();">
+                <div class="listimage">
+                  <img src="assets/list img/raplist.jfif" alt="" />
+                  <div class="buttonlayout rapbutton border">
+                    <div class="playpause">
+                      <img src="assets/svgs/play.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="listname">Rap</div>
+              </div>
+            </div>
+          </div>
+          <div class="playbar borderBottom">
+            <div class="pbleft"></div>
+            <div class="pbcenter">
+              <div class="time-button">
+                <div class="current"></div>
+                <div class="prevplaynext">
+                  <div class="prev">
+                    <img src="assets/svgs/prev.svg" alt="" />
+                  </div>
+                  <div class="play">
+                    <img src="assets/svgs/pause.svg" alt="" />
+                  </div>
+                  <div class="next">
+                    <img src="assets/svgs/next.svg" alt="" />
+                  </div>
+                </div>
+                <div class="songlength"></div>
+              </div>
+              <div class="seekbar">
+                <div class="played"></div>
+              </div>
+            </div>
+            <div class="pbright">
+              <img src="assets/svgs/volume.svg" alt="" srcset="">
+              <div class="volume">
+                <input type="range" class="volume-slider" name="volume" id="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
