@@ -82,7 +82,7 @@ let songname;
 // Main function
 async function main() {
     // fetching bollywood songs
-    let bsongfetch = await fetch("http://127.0.0.1:5500/assets/bsongs/");
+    let bsongfetch = await fetch("assets/bsongs/");
     let bsresponse = await bsongfetch.text();
     let bollydiv = document.createElement("div");
     bollydiv.innerHTML = bsresponse;
@@ -103,7 +103,7 @@ async function main() {
         }
     }
     // fetching bollywood song images
-    let bimgfetch = await fetch("http://127.0.0.1:5500/assets/bimgs/");
+    let bimgfetch = await fetch("assets/bimgs/");
     let bimgresponse = await bimgfetch.text();
     let bollyimgdiv = document.createElement("div");
     bollyimgdiv.innerHTML = bimgresponse;
@@ -117,7 +117,7 @@ async function main() {
     }
 
     // fetching rap songs
-    let rapfetch = await fetch("http://127.0.0.1:5500/assets/rapsongs/");
+    let rapfetch = await fetch("assets/rapsongs/");
     let rapresponse = await rapfetch.text();
     let rapdiv = document.createElement("div");
     rapdiv.innerHTML = rapresponse;
@@ -138,7 +138,7 @@ async function main() {
         }
     }
     // fetching rap song images
-    let rapimgfetch = await fetch("http://127.0.0.1:5500/assets/rapimgs/");
+    let rapimgfetch = await fetch("assets/rapimgs/");
     let rapimgresponse = await rapimgfetch.text();
     let rapimgdiv = document.createElement("div");
     rapimgdiv.innerHTML = rapimgresponse;
